@@ -1,0 +1,306 @@
+:root
+{
+    --primarycolor:#ff274d;
+    --secondarycolor:#f7bcf7;
+    --lightcolor:#ffffff;
+    --bgcolor-1:#58f3b2;
+    --bgcolor-2:#22282a; 
+    --padding : 8%; /* لـ Desktop */
+}
+ 
+
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+  /* لضمان أن الـ body يأخذ ارتفاع الشاشة بالكامل */
+  height: 100%; 
+  font-family: cursive;
+  font-size: 16px;
+  color:var(--lightcolor);
+}
+
+
+.home
+{
+    width: 100%;
+    min-height: 100vh; 
+    background-color:var(--bgcolor-2);
+    display: flex;
+    flex-direction: column; 
+}
+
+main {
+    flex-grow: 1; 
+    display: flex;
+}
+
+
+/* -------------------------- Navbar Styles -------------------------- */
+
+.navbar.bg-dark {
+    background-color: var(--bgcolor-2) !important;
+    padding-top: 1.5rem; 
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+}
+
+.navbar-brand h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.12rem;
+    cursor: pointer;
+    margin-bottom: 0; 
+    color: var(--lightcolor);
+}
+
+.navbar-nav {
+    margin: 0 auto !important; 
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    padding: 0 0.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: var(--lightcolor) !important;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.5s;
+    margin: 0.5rem 0.5rem; 
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--bgcolor-1) !important;
+}
+
+.btn-outline-light {
+    color: var(--bgcolor-1);
+    border-color: var(--bgcolor-1);
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 0.18rem 1.87rem;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--bgcolor-1) !important;
+    color: var(--lightcolor) !important;
+}
+
+.btn-primary {
+    background-color: var(--bgcolor-1);
+    color: var(--lightcolor);
+    border-color: var(--bgcolor-1);
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 0.18rem 1.87rem;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: transparent !important;
+    color: var(--bgcolor-1) !important;
+}
+
+
+span{color:var(--bgcolor-1) ;}
+
+/* -------------------------- Content Section -------------------------- */
+
+.content
+{
+    flex-grow: 1; 
+    padding: 0 var(--padding);
+    display: flex;
+    align-items: flex-end; /* محاذاة العناصر للأسفل */
+    flex-wrap: wrap; 
+}
+
+.content-text{
+    position:relative ;
+    bottom: 0; 
+    width: 50%; 
+    padding-bottom: 3rem; 
+}
+
+h4
+{
+    font-size: 1.25rem;
+    letter-spacing: 0.12rem;
+    color: #b182b1;
+}
+
+h1
+{
+    font-size: 4.65rem;
+    margin: 1.7rem 0 ;
+    color:#ffffff;
+}
+
+h3
+{
+    font-size: 1.5rem;
+    margin: 3.5rem 0;
+    color:#ffffff;
+}
+
+.content-text .log {
+    background-color: var(--bgcolor-1);
+    color: var(--lightcolor);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    border: 3px solid var(--bgcolor-1);
+    transition: 0.4s;
+    display: inline-block;
+    margin-bottom: 9rem; 
+    
+    
+   
+}
+
+.content-text .log:hover {
+    background-color: transparent;
+}
+
+
+.cont-imges
+{
+    width: 50%; 
+    display: flex; 
+    justify-content: center;
+    align-items: flex-end; 
+    height: 100%; 
+    position: relative; 
+}
+
+.cont-imges img
+{
+    position: relative; 
+    bottom: 0; 
+    height: auto; 
+    width: auto;
+    max-height: 500px; 
+    max-width: 100%;
+}
+
+/* -------------------------- Footer Styles -------------------------- */
+
+.footer-divider {
+    border: none;
+    height: 3px;
+    background-color: var(--bgcolor-1);
+    opacity: 1; 
+    width: 100%; /* يمتد على كامل العرض */
+    margin: 0; 
+}
+
+footer {
+    width: 100%;
+    background-color: var(--bgcolor-2); 
+    text-align: center;
+    padding: 1rem 0; /* إزالة الفراغ الجانبي */
+    position: relative; 
+    margin-top: 0; 
+}
+
+/* -------------------------- Responsive Adjustments -------------------------- */
+
+/* شاشات الحواسيب المحمولة الكبيرة (Max-width: 1200px) */
+@media (max-width: 1200px) {
+    :root {
+        --padding: 5%;
+    }
+    h1 {
+        font-size: 3.5rem;
+    }
+    .cont-imges img {
+        max-height: 450px;
+    }
+}
+
+/* شاشات الأجهزة اللوحية (Max-width: 992px) */
+@media (max-width: 992px) {
+    
+    /* Navbar */
+    .navbar-nav {
+        margin: 0 !important;
+    }
+    .navbar-nav .nav-item {
+        padding: 0;
+    }
+    .navbar-collapse {
+        text-align: left;
+    }
+
+    /* Content */
+    .content {
+        flex-direction: column; /* جعل النص والصورة تحت بعضهما البعض */
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: center; /* توسيط العناصر في المنتصف عمودياً */
+    }
+    .content-text {
+        width: 100%; /* النص يأخذ كامل العرض */
+        margin-bottom: 3rem;
+        padding-bottom: 0;
+    }
+    .cont-imges {
+        width: 100%; 
+        height: auto; 
+        align-items: center; 
+    }
+    .cont-imges img {
+        max-height: 350px; 
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0;
+    }
+    .footer-divider {
+        margin-top: 2rem; 
+    }
+}
+
+/* شاشات الهواتف المحمولة الصغيرة (Max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar-brand h2 {
+        font-size: 1.8rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+    }
+    h3 {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    .content-text .log {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .d-flex .btn-outline-light, 
+    .d-flex .btn-primary {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.9rem;
+    }
+    .cont-imges img {
+        max-height: 300px;
+    }
+}

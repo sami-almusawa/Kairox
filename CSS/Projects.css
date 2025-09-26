@@ -1,0 +1,180 @@
+:root {
+    --primarycolor: #ff274d;
+    --secondarycolor: #f7bcf7;
+    --lightcolor: #ffffff;
+    --bgcolor-1: #58f3b2; 
+    --bgcolor-2: #22282a; 
+    --padding: 8%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bgcolor-2), var(--bgcolor-1));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--lightcolor);
+}
+
+/* ⚠️ تم حذف أنماط nav القديمة (h2، ul.menu، ul.auth) بالكامل واستبدالها بـ Bootstrap Navbar ⚠️ */
+
+
+/* Content - تم الإبقاء على الأنماط كما هي */
+.content {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 var(--padding);
+}
+
+.projects-title {
+    font-size: 2.5rem;
+    background-color: var(--bgcolor-1);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+.projects-desc {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Project Boxes */
+.project-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-box {
+    display: flex;
+    gap: 30px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.project-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.project-text h3 {
+    color: var(--bgcolor-1);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.project-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--bgcolor-1);
+    color: var(--lightcolor);
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-text .btn:hover {
+    background-color: transparent;
+    color: var(--bgcolor-1);
+    border: 2px solid var(--bgcolor-1);
+}
+
+.project-media {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-media img,
+.project-media video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 5px solid var(--bgcolor-1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-media img:hover,
+.project-media video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+#myVideo {
+    width: 100%;
+    max-width: 800px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(0,0,0,0.5);
+    color: var(--bgcolor-1);
+    backdrop-filter: blur(10px);
+    margin-top: auto; 
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .project-box {
+        flex-direction: column;
+    }
+
+    .project-media img,
+    .project-media video {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* تم حذف أنماط nav القديمة، والـ Bootstrap يتولى استجابة شريط التنقل */
+
+    .projects-title {
+        font-size: 2rem;
+    }
+
+    .project-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-text p {
+        font-size: 1rem;
+    }
+}

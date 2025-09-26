@@ -1,0 +1,194 @@
+:root {
+    --primarycolor: #ff274d;
+    --secondarycolor: #f7bcf7;
+    --lightcolor: #ffffff;
+    --bgcolor-1: #58f3b2;
+    --bgcolor-2: #22282a;
+    --padding: 8%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+     background: url(../images/login\ bak.png) no-repeat center center/cover;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:inherit; 
+    filter: blur(2.5px); 
+    z-index: -1; 
+}
+
+
+
+
+.login-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.wrapper {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    color: var(--bgcolor-1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.wrapper h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+   padding: 20px 50px 20px 20px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.2);
+     background: rgba(0,0,0,0.4);
+    color: var(--bgcolor-1);
+    transition: 0.3s;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: var(--bgcolor-1);
+}
+
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.remember-forgot label input {
+    accent-color: var(--bgcolor-1);
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: var(--bgcolor-1);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: var(--bgcolor-1);
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--bgcolor-1);
+    color: var(--bgcolor-1); /* للتأكد من رؤية النص */
+}
+
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: var(--bgcolor-1);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(0,0,0,0.5);
+    color: var(--bgcolor-1);
+    backdrop-filter: blur(10px);
+    /* يجب وضع الـ footer أسفل الصفحة إذا كان الـ body يحتوي على min-height: 100vh و display: flex */
+    margin-top: auto; 
+}
+
+
+/* Responsive */
+
+.container {
+    width: 90%; 
+    max-width: 1200px; 
+    margin: auto;
+}
+
+.header, .footer, .content {
+    padding: 2vh 2vw;
+}
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 80%; 
+    }
+}
